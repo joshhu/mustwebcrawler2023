@@ -14,3 +14,4 @@
 
 * 架設此次範例平台的完整過程：https://hackmd.io/uvrlutTrT92ohSPl8jk9zw
 * 架設`scrapy`所需環境的完整過程：https://hackmd.io/rWyaLBwPQJWSjK3laE77Pg
+* `scrapy`使用說明：https://hackmd.io/@joshhu/HJY39qNU2
