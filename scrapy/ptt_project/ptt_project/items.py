@@ -9,4 +9,11 @@ import scrapy
 class PttProjectItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    pass
+    page_url = scrapy.Field()
+    title = scrapy.Field()
+    author = scrapy.Field()
+    text = scrapy.Field()
+    post_time = scrapy.Field()
+    crawl_time = scrapy.Field()
+    board = scrapy.Field()
+    push = scrapy.Field()

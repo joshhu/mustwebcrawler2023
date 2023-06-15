@@ -20,6 +20,5 @@ class PttSpider(scrapy.Spider):
 
     def parse(self, response):
         for b in self.all_boards[:20]:
-            print(b)
-            # print(f"https://www.ptt.cc/bbs/{b}/index.html")
+            print(f"https://www.ptt.cc/bbs/{b}/index.html")
         # pass

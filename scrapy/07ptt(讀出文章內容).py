@@ -89,7 +89,7 @@ class PttSpider(scrapy.Spider):
             ptt_item['board'] = response.url.split('/')[4]
             ptt_item['post_time'] = post_time
             ptt_item['crawl_time'] = taipei_time.strftime('%a %b %e %H:%M:%S %Y')
-            # print(f"{Fore.CYAN}{post_time} {Fore.YELLOW}{response.url.split('/')[4]}  {Fore.GREEN}{title}{Style.RESET_ALL}")     
+            print(f"{Fore.CYAN}{post_time} {Fore.YELLOW}{response.url.split('/')[4]}  {Fore.GREEN}{title}{Style.RESET_ALL}")     
             yield ptt_item
         else:
             print(f"{Fore.RED}{response.url}{Style.RESET_ALL}")

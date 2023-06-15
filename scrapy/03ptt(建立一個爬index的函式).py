@@ -19,7 +19,12 @@ class PttSpider(scrapy.Spider):
     print(len(all_boards))
 
     def parse(self, response):
-        for b in self.all_boards[:20]:
-            print(b)
-            # print(f"https://www.ptt.cc/bbs/{b}/index.html")
-        # pass
+        for b in self.all_boards[:1000]:
+            yield scrapy.Request(url=f"https://www.ptt.cc/bbs/{b}/index.html", cookies={'over18': '1'}, callback=self.parse_index)
+            
+    def parse_index(self, response):
+        max_url =response.xpath('//*[@id="action-bar-container"]/div/div[2]//a[2]/@href').extract_first()
+        if max_url:
+            pass
+        else:
+            print(response.url)

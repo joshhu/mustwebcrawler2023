@@ -4,9 +4,7 @@ from pymongo import MongoClient
 import urllib
 from colorama import Fore
 from colorama import Style
-from pytz import timezone
-from ptt_project.items import PttProjectItem  
-from datetime import datetime
+
 
 
 class PttSpider(scrapy.Spider):
@@ -77,19 +75,4 @@ class PttSpider(scrapy.Spider):
             title = ''
             
         if text:
-            taipei = timezone('Asia/Taipei')
-            taipei_time = datetime.now(taipei)
-            
-            ptt_item = PttProjectItem()
-            ptt_item['title'] = title
-            ptt_item['page_url'] = response.url
-            ptt_item['author'] = author
-            ptt_item['text'] = text
-            ptt_item['push'] = pushes
-            ptt_item['board'] = response.url.split('/')[4]
-            ptt_item['post_time'] = post_time
-            ptt_item['crawl_time'] = taipei_time.strftime('%a %b %e %H:%M:%S %Y')
-            # print(f"{Fore.CYAN}{post_time} {Fore.YELLOW}{response.url.split('/')[4]}  {Fore.GREEN}{title}{Style.RESET_ALL}")     
-            yield ptt_item
-        else:
-            print(f"{Fore.RED}{response.url}{Style.RESET_ALL}")
+            print(f"{Fore.YELLOW}{response.url}{Fore.GREEN}{title}{Style.RESET_ALL}")
